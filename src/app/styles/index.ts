@@ -11,20 +11,14 @@ export const GlobalStyle = createGlobalStyle`
   line-height: 24px;
   font-weight: 400;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
+  /* color-scheme: light dark; */
+  color: var(--tg-theme-text-color);
+  background-color: var(--tg-theme-bg-color);
 }
 
 a {
   font-weight: 500;
-  color: #646cff;
+  color: var(--tg-theme-link-color);
   text-decoration: inherit;
 }
 a:hover {
@@ -51,7 +45,8 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: var(--tg-theme-secondary-bg-color);
+  color: var(--tg-theme-button-text-color);
   cursor: pointer;
   transition: border-color 0.25s;
 }
@@ -63,7 +58,7 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
+/* @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
     background-color: #ffffff;
@@ -74,7 +69,7 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
-}
+} */
 
 #root {
   max-width: 1280px;
@@ -88,36 +83,8 @@ button:focus-visible {
   padding: 1.5em;
   will-change: filter;
 }
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-.logo.effector:hover {
-  filter: drop-shadow(0 0 2em #ff8c00aa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .logo.react {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
 }
 `;
