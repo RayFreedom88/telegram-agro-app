@@ -124,7 +124,6 @@ const headerStyles = css`
   .actions__button {
     width: 50px;
     height: 50px;
-    margin-right: 16px;
     border-radius: 12px;
     border: 1px solid var(--ui-01);
     background-image: url(${pencilIcon});
@@ -132,6 +131,7 @@ const headerStyles = css`
     background-position: center;
 
     &:last-of-type {
+      margin-left: 16px;
       border-color: var(--primary);
       background-image: url(${userIcon});
       background-color: var(--primary);
@@ -150,10 +150,10 @@ const headerStyles = css`
     align-items: center;
     width: 100%;
     padding: 12px 16px;
-    margin-right: 4px;
     background-color: var(--blue-sky);
 
     &:last-of-type {
+      margin-left: 4px;
       background-color: var(--green-light);
     }
   }
@@ -164,6 +164,7 @@ const headerStyles = css`
 
   .analytics__number {
     display: inline-block;
+    width: min-content;
     font-size: 20px;
     font-weight: 700;
     line-height: 20px;
