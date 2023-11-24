@@ -58,8 +58,9 @@ const headerStyles = css`
   display: flex;
   flex-direction: column;
   gap: 16px;
-  border-radius: 8px;
   width: 100%;
+  margin-bottom: 16px;
+  border-radius: 8px;
   background-color: var(--tg-theme-secondary-bg-color);
   overflow: hidden;
 
@@ -68,6 +69,11 @@ const headerStyles = css`
     flex-direction: column;
     gap: 16px;
     padding: 16px;
+    margin-bottom: 16px;
+  }
+
+  .title {
+    margin-bottom: 16px;
   }
 
   .title,
@@ -76,6 +82,10 @@ const headerStyles = css`
     justify-content: space-between;
     align-items: flex-end;
     gap: 24px;
+  }
+
+  .title__text {
+    margin-right: 24px;
   }
 
   .title__sub {
@@ -87,6 +97,7 @@ const headerStyles = css`
     gap: 8px;
     align-items: center;
     padding-right: 16px;
+    margin-right: 16px;
     overflow: hidden;
   }
 
@@ -95,6 +106,7 @@ const headerStyles = css`
     width: 48px;
     height: 48px;
     object-fit: contain;
+    margin-right: 8px;
   }
 
   .user__text {
@@ -112,6 +124,7 @@ const headerStyles = css`
   .actions__button {
     width: 50px;
     height: 50px;
+    margin-right: 16px;
     border-radius: 12px;
     border: 1px solid var(--ui-01);
     background-image: url(${pencilIcon});
@@ -137,6 +150,7 @@ const headerStyles = css`
     align-items: center;
     width: 100%;
     padding: 12px 16px;
+    margin-right: 4px;
     background-color: var(--blue-sky);
 
     &:last-of-type {
