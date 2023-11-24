@@ -1,5 +1,5 @@
 import { defineConfig } from "vite";
-import tsconfigPaths from 'vite-tsconfig-paths'
+import tsconfigPaths from "vite-tsconfig-paths";
 import react from "@vitejs/plugin-react";
 import { babel } from "@rollup/plugin-babel";
 
@@ -8,7 +8,19 @@ export default defineConfig({
   plugins: [
     tsconfigPaths(),
     babel({ extensions: [".ts", ".tsx"], babelHelpers: "bundled" }),
-    react({ fastRefresh: false}),
+    react({
+      fastRefresh: false,
+      babel: {
+        plugins: [
+          [
+            "babel-plugin-styled-components",
+            {
+              displayName: true,
+              fileName: true,
+            },
+          ],
+        ],
+      },
+    }),
   ],
 });
-

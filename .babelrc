@@ -5,6 +5,6 @@
     "patronum/babel-preset"
   ],
   "plugins": [
-    ["effector/babel-plugin", {"factories": []}]
+    ["effector/babel-plugin", {"factories": []}],
   ]
 }

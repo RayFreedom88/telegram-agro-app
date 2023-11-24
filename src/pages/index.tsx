@@ -1,13 +1,12 @@
 import { lazy } from "react";
-import { Route, Routes, Navigate } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 
-const TestPage = lazy(() => import("./test"));
+const MainPage = lazy(() => import("./main"));
 
 export const Routing = () => {
-    return (
-        <Routes>
-            <Route path="/" element={<TestPage/>} />
-            <Route path="*" element={<Navigate to="/" />} />
-        </Routes>
-    );
+  return (
+    <Routes>
+      <Route path="/" element={<MainPage />} />
+    </Routes>
+  );
 };
