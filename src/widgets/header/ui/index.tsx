@@ -1,10 +1,18 @@
 import { FC } from "react";
 import { css } from "styled-components";
+import { WebApp as telegram } from "@grammyjs/web-app";
 import userImg from "shared/assets/images/user-img.jpeg";
 import pencilIcon from "shared/assets/icons/pencil.svg";
 import userIcon from "shared/assets/icons/user.svg";
 
+type TUser = {
+  first_name: string;
+  last_name: string;
+};
+
 export const Header: FC = () => {
+  const { first_name, last_name } = telegram?.initDataUnsafe?.user as TUser;
+
   return (
     <header css={headerStyles}>
       <div className="header-wrapper">
@@ -16,7 +24,10 @@ export const Header: FC = () => {
         <div className="info">
           <div className="user">
             <img className="user__img" src={userImg} alt="фото пользователя" />
-            <p className="user__text">Петров Василий</p>
+            <p className="user__text">
+              {first_name}
+              {` ${last_name}`}
+            </p>
           </div>
 
           <div className="actions">
