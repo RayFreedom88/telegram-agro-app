@@ -163,6 +163,7 @@ const headerStyles = css`
   }
 
   .analytics__number {
+    display: inline-block;
     font-size: 20px;
     font-weight: 700;
     line-height: 20px;
