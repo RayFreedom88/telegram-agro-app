@@ -49,8 +49,6 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    display: flex;
-    place-items: center;
     min-height: 100vh;
     height: 100vh;
     margin: 0 auto;
