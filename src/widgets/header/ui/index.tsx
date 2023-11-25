@@ -1,20 +1,20 @@
 import { FC } from "react";
-import { css } from "styled-components";
-import { WebApp as telegram } from "@grammyjs/web-app";
+import styled from "styled-components";
 import userImg from "shared/assets/images/user-img.jpeg";
 import pencilIcon from "shared/assets/icons/pencil.svg";
 import userIcon from "shared/assets/icons/user.svg";
-
-type TUser = {
-  first_name: string;
-  last_name: string;
-};
+import { telegram } from "shared/lib";
 
 export const Header: FC = () => {
-  const { first_name, last_name } = telegram?.initDataUnsafe?.user as TUser;
+  const {
+    user: { username = "User", first_name, last_name },
+  } = telegram.useTelegram();
+
+  const userText =
+    first_name && last_name ? `${first_name} ${last_name}` : username;
 
   return (
-    <header css={headerStyles}>
+    <HeaderStyles>
       <div className="header-wrapper">
         <div className="title">
           <h1 className="title__text">Моё резюме</h1>
@@ -24,10 +24,7 @@ export const Header: FC = () => {
         <div className="info">
           <div className="user">
             <img className="user__img" src={userImg} alt="фото пользователя" />
-            <p className="user__text">
-              {first_name}
-              {` ${last_name}`}
-            </p>
+            <p className="user__text">{userText}</p>
           </div>
 
           <div className="actions">
@@ -50,14 +47,14 @@ export const Header: FC = () => {
           <p className="analytics__number">20</p>
         </div>
       </div>
-    </header>
+    </HeaderStyles>
   );
 };
 
-const headerStyles = css`
+const HeaderStyles = styled.header`
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  /* gap: 16px; */
   width: 100%;
   margin-bottom: 16px;
   border-radius: 8px;
@@ -67,7 +64,7 @@ const headerStyles = css`
   .header-wrapper {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    /* gap: 16px; */
     padding: 16px;
     margin-bottom: 16px;
   }
@@ -81,7 +78,7 @@ const headerStyles = css`
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    gap: 24px;
+    /* gap: 24px; */
   }
 
   .title__text {
@@ -94,7 +91,7 @@ const headerStyles = css`
 
   .user {
     display: flex;
-    gap: 8px;
+    /* gap: 8px; */
     align-items: center;
     padding-right: 16px;
     margin-right: 16px;
@@ -118,7 +115,7 @@ const headerStyles = css`
 
   .actions {
     display: flex;
-    gap: 16px;
+    /* gap: 16px; */
   }
 
   .actions__button {
@@ -141,7 +138,7 @@ const headerStyles = css`
   .analytics {
     display: flex;
     justify-content: space-between;
-    gap: 4px;
+    /* gap: 4px; */
   }
 
   .analytics__item {

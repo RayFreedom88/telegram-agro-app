@@ -1,11 +1,13 @@
 import { useEffect } from "react";
-import { WebApp as telegram } from "@grammyjs/web-app";
+import { telegram } from "shared/lib";
 import { Routing } from "pages";
 import { withProviders } from "./providers";
 
 const App = () => {
+  const { tg } = telegram.useTelegram();
+
   useEffect(() => {
-    telegram.ready();
+    tg.ready();
   }, []);
 
   return (
