@@ -7,8 +7,10 @@ import { telegram } from "shared/lib";
 
 export const Header: FC = () => {
   const {
-    user: { username = "User", first_name, last_name },
+    user: { username = "User", first_name, last_name, photo_url },
   } = telegram.useTelegram();
+
+  console.log('photo_url :>> ', photo_url);
 
   const userText =
     first_name && last_name ? `${first_name} ${last_name}` : username;
