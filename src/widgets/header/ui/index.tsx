@@ -161,7 +161,7 @@ const HeaderStyles = styled.header`
 
   .analytics__number {
     display: inline-block;
-    width: min-content;
+    text-align: end;
     font-size: 20px;
     font-weight: 700;
     line-height: 20px;
