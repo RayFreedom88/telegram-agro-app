@@ -1,13 +1,10 @@
-import { FC, useEffect, useState } from "react";
+import { FC } from "react";
 import styled from "styled-components";
-import pencilIcon from "shared/assets/icons/pencil.svg";
-import userIcon from "shared/assets/icons/user.svg";
+import { icons, images } from "shared/assets";
 import { telegram } from "shared/lib";
 
 export const Header: FC = () => {
-  const userPhotoDefault =
-    "https://p7.hiclipart.com/preview/375/142/528/computer-software-computer-icons-youtube-business-woman.jpg";
-  const userPhoto = "" || userPhotoDefault;
+  const userPhoto = "" || images.userPhotoDefault;
 
   const {
     user: { username = "Noname", first_name, last_name },
@@ -127,14 +124,14 @@ const HeaderStyled = styled.header`
     height: 50px;
     border-radius: 12px;
     border: 1px solid var(--ui-01);
-    background-image: url(${pencilIcon});
+    background-image: url(${icons.pencil});
     background-repeat: no-repeat;
     background-position: center;
 
     &:last-of-type {
       margin-left: 16px;
       border-color: var(--primary);
-      background-image: url(${userIcon});
+      background-image: url(${icons.user});
       background-color: var(--primary);
     }
   }

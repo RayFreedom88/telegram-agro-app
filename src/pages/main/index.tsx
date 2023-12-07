@@ -1,5 +1,5 @@
 import {styled} from "styled-components";
-import { Layout } from "shared/ui/layout/layout";
+import { Layout } from "shared/ui";
 import { Header } from "widgets/header";
 import { VacancyList } from "widgets/vacancy-list";
 

@@ -1,54 +1,17 @@
 import { styled } from "styled-components";
-
-const icon =
-  "https://play-lh.googleusercontent.com/bUo5-ivw6m2ICBJZbu-aePO82eThLIx7yJKwE1y-JRj6ktVTIY4SiyyoBEu-cK7b-xY=s512";
-
-type TSalary = string | number | null;
+import { Link } from "react-router-dom";
+import { vacancies } from "entities/vacancy";
+import { getSalary } from "../lib";
 
 export const VacancyList = () => {
-  const vacancies = [
-    {
-      name: "Стажер-технолог по выращиванию птицы",
-      address: "Респ.Башкортостан, с.Буздяк",
-      from: 26000,
-      to: 55000,
-    },
-    {
-      name: "Ветеринарный техник",
-      address: "Псковская обл., г.Великие Луки",
-      from: 35000,
-      to: null,
-    },
-    {
-      name: "Оператор машинного доения",
-      address: "г.Череповец",
-      from: 38000,
-      to: null,
-    },
-    {
-      name: "Бригадир животноводства",
-      address: "Самарская обл., д.Арсентьевка",
-      from: null,
-      to: null,
-    },
-  ];
-
-  const getSalary = (from: TSalary, to: TSalary) => {
-    if (from && to)
-      return `${parseInt(from as string).toLocaleString("ru-RU")}-${parseInt(
-        to as string,
-      ).toLocaleString("ru-RU")} ₽`;
-    if (from) return `${parseInt(from as string).toLocaleString("ru-RU")} ₽`;
-
-    return "з/п не указана";
-  };
-
   return (
-    <VacancyListStyled>
-      {vacancies.map(({ name, address, from, to }, index) => (
-        <li key={`vacancy-${index}`}>
-          <VacancyCardStyled className="vacancy">
-            <img className="vacancy__img" src={icon} alt="icon" />
+    <VacancyListStyled className="vacancy-list">
+      {vacancies.map(({ id, logoUrl, name, address, from, to }) => (
+        <li className="vacancy-list__item" key={id}>
+          <VacancyCardStyled className="vacancy" to={`vacancy/${id}`}>
+            {logoUrl && (
+              <img className="vacancy__img" src={logoUrl} alt="icon" />
+            )}
             <h3 className="vacancy__title">{name}</h3>
             <p className="vacancy__address">{address}</p>
             <p className="vacancy__salary">{getSalary(from, to)}</p>
@@ -63,12 +26,13 @@ const VacancyListStyled = styled.ul`
   display: flex;
   flex-direction: column;
 
-  li {
+  .vacancy-list__item {
     margin-bottom: 4px;
   }
 `;
 
-const VacancyCardStyled = styled.div`
+const VacancyCardStyled = styled(Link)`
+  display: block;
   padding: 16px;
   background-color: var(--tg-theme-secondary-bg-color);
   /* background-color: white; */

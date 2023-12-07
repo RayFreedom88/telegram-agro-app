@@ -1,7 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 import { normalize } from "styled-normalize";
-import sfProTextRegular from "shared/assets/fonts/SFProText-Regular.ttf";
-import sfProTextBolt from "shared/assets/fonts/SFProText-Bold.ttf";
+import { fonts } from "shared/assets";
 
 export const GlobalStyle = createGlobalStyle`
   /* You can continue writing global styles here */
@@ -10,14 +9,14 @@ export const GlobalStyle = createGlobalStyle`
 
   @font-face {
     font-family: "SF Pro Text";
-    src: url(${sfProTextRegular}) format('truetype');
+    src: url(${fonts.SFPro.Regular}) format('truetype');
     font-weight: 400;
     font-style: normal;
   }
 
   @font-face {
     font-family: "SF Pro Text";
-    src: url(${sfProTextBolt}) format('truetype');
+    src: url(${fonts.SFPro.Bolt}) format('truetype');
     font-weight: 700;
     font-style: normal;
   }
@@ -122,5 +121,18 @@ export const GlobalStyle = createGlobalStyle`
     clip-path: inset(100%);
     clip: rect(0 0 0 0);
     overflow: hidden;
+  }
+
+  .ant-spin.overlay {
+    z-index: 9999;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.5);
   }
 `;

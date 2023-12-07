@@ -1,0 +1,1 @@
+export {mocks as vacancies} from "./model"
