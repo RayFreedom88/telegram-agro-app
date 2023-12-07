@@ -64,8 +64,8 @@ const HeaderStyled = styled.header`
   width: 100%;
   margin-bottom: 16px;
   border-radius: 8px;
-  /* background-color: var(--tg-theme-secondary-bg-color); */
-  background-color: white;
+  background-color: var(--tg-theme-secondary-bg-color);
+  /* background-color: white; */
   overflow: hidden;
 
   .header-wrapper {

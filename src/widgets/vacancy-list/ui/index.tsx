@@ -70,8 +70,8 @@ const VacancyListStyled = styled.ul`
 
 const VacancyCardStyled = styled.div`
   padding: 16px;
-  /* background-color: var(--tg-theme-secondary-bg-color); */
-  background-color: white;
+  background-color: var(--tg-theme-secondary-bg-color);
+  /* background-color: white; */
   border-radius: 8px;
 
   .vacancy__img {

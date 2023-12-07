@@ -54,8 +54,8 @@ export const GlobalStyle = createGlobalStyle`
     height: 100vh;
     margin: 0 auto;
     padding: 0;
-    /* background-color: var(--tg-theme-bg-color); */
-    background-color: #ededed;
+    background-color: var(--tg-theme-bg-color);
+    /* background-color: #ededed; */
     color: var(--tg-theme-text-color);
     font-family: var(--fonts-sf-pro-text);
     font-style: normal;
