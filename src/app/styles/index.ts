@@ -133,6 +133,6 @@ export const GlobalStyle = createGlobalStyle`
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(255, 255, 255, 0.5);
+    background-color: var(--tg-theme-bg-color);
   }
 `;

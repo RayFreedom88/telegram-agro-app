@@ -4,7 +4,7 @@ import { Spin } from "antd"; // ~ shared/ui/spin
 
 export const withRouter = (component: () => React.ReactNode) => () => (
   <BrowserRouter>
-    <Suspense fallback={<Spin delay={300} className="overlay" size="large" />}>
+    <Suspense fallback={<Spin delay={100} className="overlay" size="large" />}>
       {component()}
     </Suspense>
   </BrowserRouter>

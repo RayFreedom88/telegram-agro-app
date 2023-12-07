@@ -8,7 +8,7 @@ export const VacancyList = () => {
     <VacancyListStyled className="vacancy-list">
       {vacancies.map(({ id, logoUrl, name, address, from, to }) => (
         <li className="vacancy-list__item" key={id}>
-          <VacancyCardStyled className="vacancy" to={`vacancy/${id}`}>
+          <VacancyCardStyled className="vacancy" to={`/vacancy/${id}`}>
             {logoUrl && (
               <img className="vacancy__img" src={logoUrl} alt="icon" />
             )}
