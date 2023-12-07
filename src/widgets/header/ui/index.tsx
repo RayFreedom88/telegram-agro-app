@@ -1,22 +1,23 @@
-import { FC } from "react";
+import { FC, useEffect, useState } from "react";
 import styled from "styled-components";
-import userImg from "shared/assets/images/user-img.jpeg";
 import pencilIcon from "shared/assets/icons/pencil.svg";
 import userIcon from "shared/assets/icons/user.svg";
 import { telegram } from "shared/lib";
 
 export const Header: FC = () => {
-  const {
-    user: { username = "User", first_name, last_name, photo_url },
-  } = telegram.useTelegram();
+  const userPhotoDefault =
+    "https://p7.hiclipart.com/preview/375/142/528/computer-software-computer-icons-youtube-business-woman.jpg";
+  const userPhoto = "" || userPhotoDefault;
 
-  console.log('photo_url :>> ', photo_url);
+  const {
+    user: { username = "Noname", first_name, last_name },
+  } = telegram.useTelegram();
 
   const userText =
     first_name && last_name ? `${first_name} ${last_name}` : username;
 
   return (
-    <HeaderStyles>
+    <HeaderStyled>
       <div className="header-wrapper">
         <div className="title">
           <h1 className="title__text">Моё резюме</h1>
@@ -25,7 +26,11 @@ export const Header: FC = () => {
 
         <div className="info">
           <div className="user">
-            <img className="user__img" src={userImg} alt="фото пользователя" />
+            <img
+              className="user__img"
+              src={userPhoto}
+              alt="фото пользователя"
+            />
             <p className="user__text">{userText}</p>
           </div>
 
@@ -49,26 +54,24 @@ export const Header: FC = () => {
           <p className="analytics__number">20</p>
         </div>
       </div>
-    </HeaderStyles>
+    </HeaderStyled>
   );
 };
 
-const HeaderStyles = styled.header`
+const HeaderStyled = styled.header`
   display: flex;
   flex-direction: column;
-  /* gap: 16px; */
   width: 100%;
   margin-bottom: 16px;
   border-radius: 8px;
-  background-color: var(--tg-theme-secondary-bg-color);
+  /* background-color: var(--tg-theme-secondary-bg-color); */
+  background-color: white;
   overflow: hidden;
 
   .header-wrapper {
     display: flex;
     flex-direction: column;
-    /* gap: 16px; */
     padding: 16px;
-    margin-bottom: 16px;
   }
 
   .title {
@@ -80,7 +83,6 @@ const HeaderStyles = styled.header`
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    /* gap: 24px; */
   }
 
   .title__text {
@@ -93,7 +95,6 @@ const HeaderStyles = styled.header`
 
   .user {
     display: flex;
-    /* gap: 8px; */
     align-items: center;
     padding-right: 16px;
     margin-right: 16px;
@@ -106,6 +107,7 @@ const HeaderStyles = styled.header`
     height: 48px;
     object-fit: contain;
     margin-right: 8px;
+    background-color: var(--ui-01);
   }
 
   .user__text {
@@ -140,7 +142,6 @@ const HeaderStyles = styled.header`
   .analytics {
     display: flex;
     justify-content: space-between;
-    /* gap: 4px; */
   }
 
   .analytics__item {

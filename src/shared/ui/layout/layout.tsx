@@ -1,4 +1,5 @@
 import { FC, PropsWithChildren, type ReactNode } from "react";
+import styled from "styled-components";
 
 interface IProps extends PropsWithChildren {
   headerSlot?: ReactNode;
@@ -10,9 +11,15 @@ export const Layout: FC<IProps> = (props) => {
     <>
       {props.headerSlot}
 
-      <main className="main">{props.children}</main>
+      <MainStyled>{props.children}</MainStyled>
 
       {props.bottomSlot}
     </>
   );
 };
+
+const MainStyled = styled.main`
+  section:not(:last-child) {
+    margin-bottom: 16px;
+  }
+`;

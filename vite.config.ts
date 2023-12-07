@@ -9,7 +9,6 @@ export default defineConfig({
     tsconfigPaths(),
     babel({ extensions: [".ts", ".tsx"], babelHelpers: "bundled" }),
     react({
-      fastRefresh: false,
       babel: {
         plugins: [
           [

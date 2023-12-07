@@ -35,6 +35,7 @@ export const GlobalStyle = createGlobalStyle`
     --green-light: #d0e5c6;
     // color text
     --helper-text-01: rgba(0, 0, 0, 0.50);
+    --text-03: #707070;
     --tertiary-text: #14ae5c;
   }
 
@@ -53,7 +54,8 @@ export const GlobalStyle = createGlobalStyle`
     height: 100vh;
     margin: 0 auto;
     padding: 0;
-    background-color: var(--tg-theme-bg-color);
+    /* background-color: var(--tg-theme-bg-color); */
+    background-color: #ededed;
     color: var(--tg-theme-text-color);
     font-family: var(--fonts-sf-pro-text);
     font-style: normal;
@@ -84,11 +86,14 @@ export const GlobalStyle = createGlobalStyle`
     text-decoration: none;
   }
 
-  h1 {
+  h1,
+  h2,
+  h3,
+  h4 {
     margin: 0;
     font-size: 20px;
     font-weight: 700;
-    line-height: 20px
+    line-height: 100%; /* 20px */
   }
 
   p {
