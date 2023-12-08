@@ -3,6 +3,8 @@ import styled from "styled-components";
 import { icons, images } from "shared/assets";
 import { telegram } from "shared/lib";
 
+// TODO: Часть компонента нужно будет декомпозировать в слой features. К примеру кнопки из блока actions
+
 export const Header: FC = () => {
   const userPhoto = "" || images.userPhotoDefault;
 
