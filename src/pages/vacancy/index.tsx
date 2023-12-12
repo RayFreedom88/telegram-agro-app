@@ -4,6 +4,11 @@ import { Layout } from "shared/ui";
 import { telegram } from "shared/lib";
 import { useEffect } from "react";
 
+const TextButton = {
+  RESPOND: "Откликнуться",
+  SUBMITTED: "Отправлено",
+};
+
 const VacancyPage = () => {
   const { id } = useParams();
   const navigate = useNavigate();
@@ -16,11 +21,34 @@ const VacancyPage = () => {
     tg.BackButton.hide();
   };
 
+  if (tg.MainButton.isActive) {
+    tg.MainButton.setParams({
+      text: TextButton.RESPOND,
+      text_color: "#ffffff",
+    });
+  }
+
+  tg.MainButton.show();
+
+  const handleMainButtonClick = () => {
+    if (tg.MainButton.isActive) {
+      tg.MainButton.setParams({
+        text: TextButton.SUBMITTED,
+        text_color: "#707070",
+      });
+      tg.MainButton.disable();
+    }
+  };
+
   useEffect(() => {
     tg.BackButton.onClick(handleBackButtonClick);
+    tg.MainButton.onClick(handleMainButtonClick);
 
     return () => {
       tg.BackButton.offClick(handleBackButtonClick);
+      tg.MainButton.onClick(handleMainButtonClick);
+      tg.MainButton.hide();
+      tg.MainButton.enable();
     };
   }, []);
 
