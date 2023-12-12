@@ -53,7 +53,7 @@ export const GlobalStyle = createGlobalStyle`
     height: 100vh;
     margin: 0 auto;
     padding: 0;
-    background-color: var(--tg-theme-bg-color);
+    background-color: var(--tg-theme-secondary-bg-color);
     /* background-color: #ededed; */
     color: var(--tg-theme-text-color);
     font-family: var(--fonts-sf-pro-text);
@@ -105,7 +105,7 @@ export const GlobalStyle = createGlobalStyle`
     font-size: 1em;
     font-weight: 500;
     font-family: inherit;
-    background-color: var(--tg-theme-secondary-bg-color);
+    background-color: var(--tg-theme-bg-color);
     color: var(--tg-theme-button-text-color);
     cursor: pointer;
   }

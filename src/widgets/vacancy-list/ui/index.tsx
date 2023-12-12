@@ -35,7 +35,7 @@ const VacancyListStyled = styled.ul`
 const VacancyCardStyled = styled(Link)`
   display: block;
   padding: 16px;
-  background-color: var(--tg-theme-secondary-bg-color);
+  background-color: var(--tg-theme-bg-color);
   /* background-color: white; */
   border-radius: 8px;
 
