@@ -1,9 +1,28 @@
 import { styled } from "styled-components";
+import { useNavigate, useParams } from "react-router";
 import { Layout } from "shared/ui";
-import { useParams } from "react-router";
+import { telegram } from "shared/lib";
+import { useEffect } from "react";
 
 const VacancyPage = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
+  const { tg } = telegram.useTelegram();
+
+  tg.BackButton.show();
+
+  const handleBackButtonClick = () => {
+    navigate("/", { replace: true });
+    tg.BackButton.hide();
+  };
+
+  useEffect(() => {
+    tg.BackButton.onClick(handleBackButtonClick);
+
+    return () => {
+      tg.BackButton.offClick(handleBackButtonClick);
+    };
+  }, []);
 
   return (
     <Layout>
