@@ -18,6 +18,6 @@ export default MainPage;
 
 const VacancyListSectionStyled = styled.section`
   .vacancy-list-title {
-    margin-bottom: 16px;
+    margin-bottom: var(--spacing-05);
   }
 `

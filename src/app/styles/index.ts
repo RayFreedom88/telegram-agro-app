@@ -25,6 +25,11 @@ export const GlobalStyle = createGlobalStyle`
     /* font vars*/
     --fonts-sf-pro-text: "SF Pro Text", sans-serif;
 
+    /* telegram vars */
+    /* --tg-theme-bg-color: #ffffff;
+    --tg-theme-secondary-bg-color: #ededed;
+    --tg-theme-text-color: #000000; */
+
     /* color vars*/
     --color-dark: #242424;
     --color-primary: #108ee9;
@@ -36,6 +41,12 @@ export const GlobalStyle = createGlobalStyle`
     --helper-text-01: rgba(0, 0, 0, 0.50);
     --text-03: #707070;
     --tertiary-text: #14ae5c;
+
+    /* spacing */
+    --spacing-02: 4px;
+    --spacing-03: 8px;
+    --spacing-04: 12px;
+    --spacing-05: 16px;
   }
 
   *,
@@ -54,7 +65,6 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0 auto;
     padding: 0;
     background-color: var(--tg-theme-secondary-bg-color);
-    /* background-color: #ededed; */
     color: var(--tg-theme-text-color);
     font-family: var(--fonts-sf-pro-text);
     font-style: normal;
@@ -70,7 +80,7 @@ export const GlobalStyle = createGlobalStyle`
     min-width: 320px;
     width: 100%;
     margin: 0 auto;
-    padding: 16px;
+    padding: var(--spacing-05);
   }
 
   ul,
