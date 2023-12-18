@@ -1,11 +1,14 @@
-import { FC } from "react";
+import { FC, useState } from "react";
 import styled from "styled-components";
-import { icons, images } from "shared/assets";
+import { Button } from "antd";
+import { Plus } from "lucide-react";
+import { images } from "shared/assets";
 import { telegram } from "shared/lib";
 
 // TODO: Часть компонента нужно будет декомпозировать в слой features. К примеру кнопки из блока actions
 
 export const Header: FC = () => {
+  const [isVisible, setVisible] = useState(true); // TODO: Временный код
   const userPhoto = "" || images.userPhotoDefault;
 
   const {
@@ -15,12 +18,18 @@ export const Header: FC = () => {
   const userText =
     first_name && last_name ? `${first_name} ${last_name}` : username;
 
+  const options: Intl.DateTimeFormatOptions = {
+    hour: "numeric",
+    minute: "numeric",
+  }; // TODO: Временный код
+  const modifiedDate = new Date().toLocaleDateString("ru-RU", options); // TODO: Временный код
+
   return (
     <HeaderStyled>
       <div className="header-wrapper">
         <div className="title">
           <h1 className="title__text">Моё резюме</h1>
-          <p className="title__sub">изм. 20 сен 2023 в 17:42</p>
+          <p className="title__sub">изм. {modifiedDate}</p>
         </div>
 
         <div className="info">
@@ -32,30 +41,54 @@ export const Header: FC = () => {
             />
             <p className="user__text">{userText}</p>
           </div>
+        </div>
+      </div>
 
-          <div className="actions">
-            <button className="actions__button" />
-            <button className="actions__button" />
+      {isVisible ? (
+        <ButtonStyled
+          type="primary"
+          size="large"
+          icon={<Plus size={24} absoluteStrokeWidth={true} />}
+          onClick={(e) => {
+            setVisible(!isVisible);
+          }}
+        >
+          Создать
+        </ButtonStyled>
+      ) : (
+        <div className="analytics">
+          <div className="analytics__item">
+            <p className="analytics__text">Просмотров</p>
+            <p className="analytics__number">
+              1197 <span className="analytics__sub-number">+199</span>
+            </p>
+          </div>
+
+          <div className="analytics__item">
+            <p className="analytics__text">Действий</p>
+            <p className="analytics__number">20</p>
           </div>
         </div>
-      </div>
-
-      <div className="analytics">
-        <div className="analytics__item">
-          <p className="analytics__text">Просмотров</p>
-          <p className="analytics__number">
-            1197 <span className="analytics__sub-number">+199</span>
-          </p>
-        </div>
-
-        <div className="analytics__item">
-          <p className="analytics__text">Действий</p>
-          <p className="analytics__number">20</p>
-        </div>
-      </div>
+      )}
     </HeaderStyled>
   );
 };
+
+const ButtonStyled = styled(Button)`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0px var(--spacing-05);
+  margin-bottom: var(--spacing-05);
+
+  background-color: var(--primary-color);
+  box-shadow: none;
+
+  span:first-child {
+    order: 1;
+    margin-left: var(--spacing-05);
+  }
+`;
 
 const HeaderStyled = styled.header`
   display: flex;
@@ -114,28 +147,6 @@ const HeaderStyled = styled.header`
     line-height: 18px;
     overflow: hidden;
     text-overflow: ellipsis;
-  }
-
-  .actions {
-    display: flex;
-    /* gap: 16px; */
-  }
-
-  .actions__button {
-    width: 50px;
-    height: 50px;
-    border-radius: 12px;
-    border: 1px solid var(--ui-01);
-    background-image: url(${icons.pencil});
-    background-repeat: no-repeat;
-    background-position: center;
-
-    &:last-of-type {
-      margin-left: 16px;
-      border-color: var(--primary);
-      background-image: url(${icons.user});
-      background-color: var(--primary);
-    }
   }
 
   .analytics {

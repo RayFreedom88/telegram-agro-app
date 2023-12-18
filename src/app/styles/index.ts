@@ -26,9 +26,10 @@ export const GlobalStyle = createGlobalStyle`
     --fonts-sf-pro-text: "SF Pro Text", sans-serif;
 
     /* telegram vars */
-    /* --tg-theme-bg-color: #ffffff;
+    --tg-theme-bg-color: #ffffff;
     --tg-theme-secondary-bg-color: #ededed;
-    --tg-theme-text-color: #000000; */
+    --tg-theme-text-color: #000000;
+    --primary-color: #3390ec;
 
     /* color vars*/
     --color-dark: #242424;
