@@ -61,10 +61,10 @@ const HeaderStyled = styled.header`
   display: flex;
   flex-direction: column;
   width: 100%;
-  margin-bottom: 16px;
+  margin-bottom: var(--spacing-04);
   border-radius: 8px;
+
   background-color: var(--tg-theme-bg-color);
-  /* background-color: white; */
   overflow: hidden;
 
   .header-wrapper {

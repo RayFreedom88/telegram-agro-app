@@ -17,8 +17,7 @@ const VacancyPage = () => {
   tg.BackButton.show();
 
   const handleBackButtonClick = () => {
-    navigate("/", { replace: true });
-    tg.BackButton.hide();
+    navigate(-1);
   };
 
   if (tg.MainButton.isActive) {
@@ -47,7 +46,6 @@ const VacancyPage = () => {
     return () => {
       tg.BackButton.offClick(handleBackButtonClick);
       tg.MainButton.onClick(handleMainButtonClick);
-      tg.MainButton.hide();
       tg.MainButton.enable();
     };
   }, []);

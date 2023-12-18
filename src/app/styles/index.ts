@@ -36,13 +36,18 @@ export const GlobalStyle = createGlobalStyle`
     --ui-01: #d1d1d1;
     --primary: #ff3d00;
     --blue-sky: #c6dee5;
+    --sky: #dee1e7;
     --green-light: #d0e5c6;
     // color text
     --helper-text-01: rgba(0, 0, 0, 0.50);
+    --text-01: #161616;
+    --text-02: #ffffff;
     --text-03: #707070;
+    --text-04: #c5c5c5;
     --tertiary-text: #14ae5c;
 
     /* spacing */
+    --spacing-01: 2px;
     --spacing-02: 4px;
     --spacing-03: 8px;
     --spacing-04: 12px;

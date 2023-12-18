@@ -25,7 +25,7 @@ export const VacancyCard: FC<IVacancyCard> = ({
   to,
 }) => {
   return (
-    <VacancyCardStyled className="vacancy" to={`/vacancy/${id}`}>
+    <VacancyCardStyled className="vacancy" to={`/vacancies/${id}`}>
       <div className="vacancy__caption">
         <h3 className="vacancy__title">{title}</h3>
         <div className="vacancy__company">
