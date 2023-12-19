@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { Link } from "react-router-dom";
 import { styled } from "styled-components";
-import { getSalary } from "../../lib";
+import { getRandomRgba, getSalary } from "../../lib";
 
 interface IVacancyCard {
   id: string;
@@ -13,6 +13,15 @@ interface IVacancyCard {
   from?: string | number | null;
   to?: string | number | null;
 }
+
+type TGetVacancyLogoProps = IVacancyCard["logoUrl"];
+
+const getVacancyLogo = (url: TGetVacancyLogoProps) =>
+  url ? (
+    <img className="vacancy__img" src={url} alt="logo" />
+  ) : (
+    <div className="vacancy__logo" />
+  );
 
 export const VacancyCard: FC<IVacancyCard> = ({
   id,
@@ -29,7 +38,8 @@ export const VacancyCard: FC<IVacancyCard> = ({
       <div className="vacancy__caption">
         <h3 className="vacancy__title">{title}</h3>
         <div className="vacancy__company">
-          {logoUrl && <img className="vacancy__img" src={logoUrl} alt="icon" />}
+          {getVacancyLogo(logoUrl)}
+
           <h4 className="vacancy__company-name">{company}</h4>
         </div>
       </div>
@@ -58,6 +68,20 @@ const VacancyCardStyled = styled(Link)`
   border-radius: 8px;
   overflow: hidden;
   color: var(--tg-theme-text-color);
+
+  .vacancy__logo {
+    margin-right: var(--spacing-03);
+    height: 24px;
+    width: 24px;
+    border-radius: 50%;
+
+    background: radial-gradient(
+      at center,
+      ${getRandomRgba()},
+      ${getRandomRgba(0.5)} 40%,
+      rgba(255, 255, 255, 1) 80%
+    );
+  }
 
   .vacancy__caption {
     position: relative;

@@ -9,3 +9,21 @@ export const getSalary = (from: TSalary, to: TSalary) => {
 
   return "з/п не указана";
 };
+
+export const getRandomRgba = (opacity = 1) => {
+  const o = Math.round;
+  const r = Math.random;
+  const s = 255;
+
+  return (
+    "rgba(" +
+    o(r() * s) +
+    "," +
+    o(r() * s) +
+    "," +
+    o(r() * s) +
+    "," +
+    opacity +
+    ")"
+  );
+};
