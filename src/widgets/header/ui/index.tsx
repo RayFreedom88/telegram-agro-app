@@ -81,12 +81,17 @@ const ButtonStyled = styled(Button)`
   margin: 0px var(--spacing-05);
   margin-bottom: var(--spacing-05);
 
-  background-color: var(--primary-color);
+  background-color: var(--tg-theme-button-color);
   box-shadow: none;
 
   span:first-child {
     order: 1;
     margin-left: var(--spacing-05);
+  }
+
+  &:hover {
+    transition: 0.2s opacity;
+    background: var(--tg-theme-button-color);
   }
 `;
 

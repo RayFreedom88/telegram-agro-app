@@ -14,20 +14,10 @@ const VacancyPage = () => {
   const navigate = useNavigate();
   const { tg } = telegram.useTelegram();
 
-  tg.BackButton.show();
-
   const handleBackButtonClick = () => {
-    navigate(-1);
+    navigate("/vacancies");
+    tg.MainButton.hide();
   };
-
-  if (tg.MainButton.isActive) {
-    tg.MainButton.setParams({
-      text: TextButton.RESPOND,
-      text_color: "#ffffff",
-    });
-  }
-
-  tg.MainButton.show();
 
   const handleMainButtonClick = () => {
     if (tg.MainButton.isActive) {
@@ -39,13 +29,28 @@ const VacancyPage = () => {
     }
   };
 
+  if (tg.MainButton.isActive) {
+    tg.MainButton.setParams({
+      text: TextButton.RESPOND,
+      text_color: "#ffffff",
+    });
+  }
+
   useEffect(() => {
     tg.BackButton.onClick(handleBackButtonClick);
     tg.MainButton.onClick(handleMainButtonClick);
 
+    tg.BackButton.show();
+    tg.MainButton.show();
+    tg.MainButton.setParams({
+      is_active: true,
+    });
+
     return () => {
       tg.BackButton.offClick(handleBackButtonClick);
       tg.MainButton.onClick(handleMainButtonClick);
+      tg.BackButton.show();
+      tg.MainButton.hide();
       tg.MainButton.enable();
     };
   }, []);
