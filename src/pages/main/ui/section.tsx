@@ -51,7 +51,7 @@ export const Section = () => {
 };
 
 const SectionStyled = styled.section`
-  height: 100vh;
+  height: auto;
 `;
 
 const SpanStyled = styled.span`
