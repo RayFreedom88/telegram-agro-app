@@ -1,15 +1,16 @@
 import { styled } from "styled-components";
-import { useLocation } from "react-router";
+import { useGate } from "effector-react";
 import { VacancyCard } from "entities/vacancy";
-import { mocks } from 'shared/mocks';
-
+import { Gate, stores } from "../model";
 
 export const VacancyList = () => {
-  const { pathname } = useLocation();
+  const vacancies = stores.useVacancies();
+
+  useGate(Gate);
 
   return (
     <VacancyListStyled className="vacancy-list">
-      {mocks.vacancies.map((props) => (
+      {vacancies?.map((props) => (
         <li className="vacancy-list__item" key={props.id}>
           <VacancyCard {...props} />
         </li>

@@ -10,3 +10,4 @@ export const getVacancyByIdFx = createEffect((id: string) => {
 });
 
 export const $vacancy = createStore<types.TVacancy | null>(null);
+export const $vacancies = createStore<types.TVacancy[] | null>(null);
