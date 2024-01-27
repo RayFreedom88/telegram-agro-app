@@ -2,8 +2,9 @@ import { FC } from "react";
 import { Link } from "react-router-dom";
 import { styled } from "styled-components";
 import { getRandomRgba, getSalary } from "../../lib";
+import { VacancyLogo } from "../vacancy-logo";
 
-interface IVacancyCard {
+export interface IVacancyCard {
   id: string;
   title: string;
   logoUrl?: string | null;
@@ -13,15 +14,6 @@ interface IVacancyCard {
   from?: string | number | null;
   to?: string | number | null;
 }
-
-type TGetVacancyLogoProps = IVacancyCard["logoUrl"];
-
-const getVacancyLogo = (url: TGetVacancyLogoProps) =>
-  url ? (
-    <img className="vacancy__img" src={url} alt="logo" />
-  ) : (
-    <div className="vacancy__logo" />
-  );
 
 export const VacancyCard: FC<IVacancyCard> = ({
   id,
@@ -38,22 +30,24 @@ export const VacancyCard: FC<IVacancyCard> = ({
       <div className="vacancy__caption">
         <h3 className="vacancy__title">{title}</h3>
         <div className="vacancy__company">
-          {getVacancyLogo(logoUrl)}
+          {<VacancyLogo url={logoUrl} />}
 
           <h4 className="vacancy__company-name">{company}</h4>
         </div>
       </div>
 
       <table className="vacancy__info">
-        <tr className="vacancy__row">
-          <td>Локация</td>
-          <td>{location}</td>
-        </tr>
+        <tbody>
+          <tr className="vacancy__row">
+            <td>Локация</td>
+            <td>{location}</td>
+          </tr>
 
-        <tr className="vacancy__row">
-          <td>Опыт</td>
-          <td>{experience}</td>
-        </tr>
+          <tr className="vacancy__row">
+            <td>Опыт</td>
+            <td>{experience}</td>
+          </tr>
+        </tbody>
       </table>
 
       <p className="vacancy__salary">{getSalary(from, to)}</p>
@@ -69,7 +63,7 @@ const VacancyCardStyled = styled(Link)`
   overflow: hidden;
   color: var(--tg-theme-text-color);
 
-  .vacancy__logo {
+  .vacancy-logo {
     margin-right: var(--spacing-03);
     height: 24px;
     width: 24px;
@@ -111,7 +105,7 @@ const VacancyCardStyled = styled(Link)`
     align-items: center;
   }
 
-  .vacancy__img {
+  .vacancy-img {
     margin-right: var(--spacing-03);
     height: 24px;
     width: 24px;

@@ -1,0 +1,1 @@
+export type TSalary = string | number | null | undefined;

@@ -1,16 +1,15 @@
-import { styled } from "styled-components";
-import { useNavigate, useParams } from "react-router";
-import { Layout } from "shared/ui";
-import { telegram } from "shared/lib";
 import { useEffect } from "react";
+import { useNavigate } from "react-router";
+import { telegram } from "shared/lib";
+import { Layout } from 'shared/ui';
+import { Section } from './ui';
 
 const TextButton = {
-  RESPOND: "Откликнуться",
-  SUBMITTED: "Отправлено",
+  Respond: "Откликнуться",
+  Submitted: "Отправлено",
 };
 
 const VacancyPage = () => {
-  const { id } = useParams();
   const navigate = useNavigate();
   const { tg } = telegram.useTelegram();
 
@@ -22,7 +21,7 @@ const VacancyPage = () => {
   const handleMainButtonClick = () => {
     if (tg.MainButton.isActive) {
       tg.MainButton.setParams({
-        text: TextButton.SUBMITTED,
+        text: TextButton.Submitted,
         text_color: "#707070",
       });
       tg.MainButton.disable();
@@ -31,7 +30,7 @@ const VacancyPage = () => {
 
   if (tg.MainButton.isActive) {
     tg.MainButton.setParams({
-      text: TextButton.RESPOND,
+      text: TextButton.Respond,
       text_color: "#ffffff",
     });
   }
@@ -57,17 +56,9 @@ const VacancyPage = () => {
 
   return (
     <Layout>
-      <VacancySectionStyled>
-        <h2 className="vacancy-title">Страница вакансии id={id}</h2>
-      </VacancySectionStyled>
+      <Section/>
     </Layout>
   );
 };
 
 export default VacancyPage;
-
-const VacancySectionStyled = styled.section`
-  .vacancy-title {
-    margin: 0 auto;
-  }
-`;

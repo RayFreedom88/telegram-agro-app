@@ -28,7 +28,7 @@ const VacanciesPage = () => {
   }, []);
 
   return (
-    <Layout>
+    <Layout indented>
       <section>
         <h2 className="visually-hidden">Каталог агро-вакансий</h2>
 

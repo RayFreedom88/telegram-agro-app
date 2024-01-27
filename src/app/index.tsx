@@ -5,6 +5,7 @@ import { withProviders } from "./providers";
 
 const App = () => {
   const { tg } = telegram.useTelegram();
+  tg.expand();
 
   useEffect(() => {
     tg.ready();

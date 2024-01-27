@@ -1,2 +1,3 @@
-export { mocks as mockVacancies } from "./model";
-export { VacancyCard } from "./ui/vacancy-card";
+export * from "./model"
+export * from "./ui";
+export * as vacancyLib from "./lib";

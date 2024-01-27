@@ -29,13 +29,14 @@ export const GlobalStyle = createGlobalStyle`
     /* --tg-theme-bg-color: #ffffff;
     --tg-theme-secondary-bg-color: #ededed;
     --tg-theme-text-color: #000000;
-    --primary-color: #3390ec; */
+    --tg-theme-button-color: #3390ec; */
 
     /* color vars*/
-    --tertiary-fill-background: rgb(123 123 123 / 24%);
+    --tertiary-fill-background: rgb(123 123 1ы23 / 24%);
     --color-dark: #242424;
     --color-primary: #108ee9;
     --ui-01: #d1d1d1;
+    --ui-04: #f1f1f1;
     --primary: #ff3d00;
     --blue-sky: #c6dee5;
     --sky: #dee1e7;
@@ -87,7 +88,6 @@ export const GlobalStyle = createGlobalStyle`
     min-width: 320px;
     width: 100%;
     margin: 0 auto;
-    padding: var(--spacing-05);
   }
 
   ul,

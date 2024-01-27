@@ -1,14 +1,15 @@
 import { styled } from "styled-components";
 import { useLocation } from "react-router";
-import { VacancyCard, mockVacancies } from "entities/vacancy";
+import { VacancyCard } from "entities/vacancy";
+import { mocks } from 'shared/mocks';
+
 
 export const VacancyList = () => {
   const { pathname } = useLocation();
-  console.log("useLocation :>> ", useLocation());
 
   return (
     <VacancyListStyled className="vacancy-list">
-      {mockVacancies.map((props) => (
+      {mocks.vacancies.map((props) => (
         <li className="vacancy-list__item" key={props.id}>
           <VacancyCard {...props} />
         </li>

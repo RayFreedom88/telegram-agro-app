@@ -1,6 +1,6 @@
-type TSalary = string | number | null | undefined;
+import { TSalary } from './vacancy.type';
 
-export const getSalary = (from: TSalary, to: TSalary) => {
+export const getSalary = (from?: TSalary, to?: TSalary) => {
   if (from && to)
     return `${parseInt(from as string).toLocaleString("ru-RU")}-${parseInt(
       to as string,

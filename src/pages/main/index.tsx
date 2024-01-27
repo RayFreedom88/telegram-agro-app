@@ -7,18 +7,18 @@ import { images } from "shared/assets";
 
 const MainPage = () => {
   return (
-    <Layout headerSlot={<Header />}>
+    <Layout headerSlot={<Header />} indented>
       <section>
         {/* TODO: Вынести в отдельный модуль */}
         <h2 className="visually-hidden">Content</h2>
         <ContentStyled>
           <LinkStyled to={""} disabled>
             <div>
-              <h3 className="link__title">
+              <h3 className="link-title">
                 Обратиться к HR <SpanStyled>скоро</SpanStyled>
               </h3>
 
-              <p className="link__text">
+              <p className="link-text">
                 Персональный HR поможет с резюме, <br />
                 найдёт подходящие варианты
               </p>
@@ -27,12 +27,12 @@ const MainPage = () => {
 
           <LinkStyled to={"vacancies"}>
             <div>
-              <h3 className="link__title">
+              <h3 className="link-title">
                 Каталог <br />
                 агро-вакансий
               </h3>
 
-              <p className="link__text">
+              <p className="link-text">
                 92 актуальных <br />
                 предложения
               </p>
@@ -41,11 +41,11 @@ const MainPage = () => {
 
           <LinkStyled to={""} disabled>
             <div>
-              <h3 className="link__title">Пройти стажировку</h3>
-              <p className="link__title">
+              <h3 className="link-title">Пройти стажировку</h3>
+              <p className="link-title">
                 <SpanStyled>скоро</SpanStyled>
               </p>
-              <p className="link__text">Для школьников и студентов</p>
+              <p className="link-text">Для школьников и студентов</p>
             </div>
           </LinkStyled>
         </ContentStyled>
@@ -98,7 +98,7 @@ const LinkStyled = styled(Link)<ILinkStyled>`
   font-weight: 400;
   line-height: 14px;
 
-  .link__title {
+  .link-title {
     margin-bottom: var(--spacing-03);
 
     font-size: 16px;
@@ -108,7 +108,7 @@ const LinkStyled = styled(Link)<ILinkStyled>`
     white-space: break-spaces;
   }
 
-  .link__text {
+  .link-text {
     color: var(--text-03);
   }
 
