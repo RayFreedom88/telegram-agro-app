@@ -61,6 +61,7 @@ const VacancyCardStyled = styled(Link)`
   background-color: var(--tg-theme-bg-color);
   border-radius: 8px;
   overflow: hidden;
+
   color: var(--tg-theme-text-color);
 
   .vacancy-logo {
@@ -125,16 +126,20 @@ const VacancyCardStyled = styled(Link)`
     border-spacing: 0;
 
     .vacancy__row {
-      color: var(--text-03);
+      color: var(--tg-theme-text-color);
       line-height: normal;
       vertical-align: top;
 
       td {
         padding: var(--spacing-02) 0;
 
+        &:first-child {
+          opacity: 0.5;
+        }
+
         &:not(:first-child) {
           padding-left: var(--spacing-03);
-          color: var(--tg-theme-text-color);
+          /* color: var(--tg-theme-text-color); */
         }
       }
     }

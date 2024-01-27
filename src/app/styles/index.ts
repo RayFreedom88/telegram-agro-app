@@ -22,6 +22,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   :root {
+    /* color-scheme: light dark; */
     /* font vars*/
     --fonts-sf-pro-text: "SF Pro Text", sans-serif;
 
@@ -58,8 +59,26 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   :root[data-color-scheme="dark"] {
+    /* telegram vars */
+    --tg-theme-bg-color: #18222d;
+    --tg-theme-secondary-bg-color: #131415;
+    --tg-theme-text-color: #ffffff;
+    --tg-theme-button-color: #2ea6ff;
+
+    /* color vars*/
     --tertiary-fill-background: rgba(118, 118, 128, 0.24);
   }
+
+  /* @media (prefers-color-scheme: dark) {
+    :root {
+      --tg-theme-bg-color: #18222d;
+      --tg-theme-secondary-bg-color: #131415;
+      --tg-theme-text-color: #ffffff;
+      --tg-theme-button-color: #2ea6ff;
+
+      --tertiary-fill-background: rgba(118, 118, 128, 0.24);
+    }
+  } */
 
   *,
   *::before,

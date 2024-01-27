@@ -84,9 +84,26 @@ export const Section = () => {
 const SegmentedStyled = styled(Segmented)`
   margin-bottom: var(--spacing-03);
   border-radius: 10px;
+  background-color: var(--tg-theme-secondary-bg-color);
 
   font-size: 10px;
   font-weight: 400;
+
+  .ant-segmented-item {
+    color: var(--tg-theme-text-color);
+    opacity: 0.5;
+
+    &:hover:not(.ant-segmented-item-selected):not(.ant-segmented-item-disabled) {
+      background-color: var(--tg-theme-bg-color);
+      color: var(--tg-theme-text-color);
+      opacity: 0.3;
+    }
+  }
+
+  .ant-segmented-item-selected {
+    background-color: var(--tg-theme-bg-color);
+    opacity: 1;
+  }
 
   .ant-segmented-item-label {
     min-height: 16px;
@@ -96,6 +113,10 @@ const SegmentedStyled = styled(Segmented)`
   .ant-segmented-thumb,
   .ant-segmented-item {
     border-radius: 10px;
+  }
+
+  .ant-segmented-thumb {
+    background-color: var(--tg-theme-bg-color);
   }
 `;
 
@@ -182,11 +203,11 @@ const SectionStyled = styled.section`
     border-spacing: 0;
     border-collapse: collapse;
     border-radius: 10px;
-    background: var(--ui-04);
+    background: var(--tg-theme-secondary-bg-color);
   }
 
   .info-table__row {
-    color: var(--text-03);
+    color: var(--tg-theme-text-color);
     line-height: normal;
     vertical-align: top;
 
@@ -195,6 +216,10 @@ const SectionStyled = styled.section`
       padding-right: var(--spacing-03);
       padding-bottom: var(--spacing-03);
       padding-left: var(--spacing-03);
+
+      &:first-child {
+        opacity: 0.7;
+      }
 
       &:not(:first-child) {
         width: 100%;
