@@ -62,7 +62,7 @@ const FilterStyled = styled.div`
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
-  margin: 12px 0;
+  margin-bottom: 12px;
 
   &::-webkit-scrollbar {
     display: none;

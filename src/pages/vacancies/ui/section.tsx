@@ -16,4 +16,5 @@ export const Section = () => {
 
 const SectionStyled = styled.section`
   height: 100vh;
+  margin-top: var(--spacing-05);
 `;

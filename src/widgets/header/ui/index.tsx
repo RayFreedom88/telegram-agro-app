@@ -98,8 +98,10 @@ const ButtonStyled = styled(Button)`
 const HeaderStyled = styled.header`
   display: flex;
   flex-direction: column;
-  width: 100%;
+  margin-top: var(--spacing-05);
+  margin-right: var(--spacing-05);
   margin-bottom: var(--spacing-04);
+  margin-left: var(--spacing-05);
   border-radius: 8px;
 
   background-color: var(--tg-theme-bg-color);

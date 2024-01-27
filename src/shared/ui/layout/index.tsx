@@ -12,9 +12,7 @@ export const Layout: FC<IProps> = ({ ...props }) => {
     <>
       {props.headerSlot}
 
-      <MainStyled $indented={props.indented}>
-        {props.children}
-      </MainStyled>
+      <MainStyled $indented={props.indented}>{props.children}</MainStyled>
 
       {props.bottomSlot}
     </>
@@ -26,9 +24,9 @@ interface IMainStyled {
 }
 
 const MainStyled = styled.main<IMainStyled>`
-  ${(props) => props.$indented && "padding: var(--spacing-05);"}
+  ${(props) => props.$indented && "padding: 0 var(--spacing-05);"}
 
   section:not(:last-child) {
-    margin-bottom: 16px;
+    margin-bottom: var(--spacing-04);
   }
 `;
