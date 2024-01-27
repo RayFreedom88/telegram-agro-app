@@ -4,7 +4,7 @@ import { images } from "shared/assets";
 
 export const Section = () => {
   return (
-    <section>
+    <SectionStyled>
       <h2 className="visually-hidden">Content</h2>
 
       <ContentStyled>
@@ -46,9 +46,13 @@ export const Section = () => {
           </div>
         </LinkStyled>
       </ContentStyled>
-    </section>
+    </SectionStyled>
   );
 };
+
+const SectionStyled = styled.section`
+  height: 100vh;
+`;
 
 const SpanStyled = styled.span`
   display: inline-block;

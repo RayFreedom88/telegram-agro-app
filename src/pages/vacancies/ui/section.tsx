@@ -1,3 +1,4 @@
+import { styled } from "styled-components";
 import { VacancyList } from "widgets/vacancy-list";
 import { Filter } from "./filter";
 
@@ -5,10 +6,14 @@ const TITLE = "Каталог агро-вакансий";
 
 export const Section = () => {
   return (
-    <section>
+    <SectionStyled>
       <h2 className="visually-hidden">{TITLE}</h2>
       <Filter />
       <VacancyList />
-    </section>
+    </SectionStyled>
   );
 };
+
+const SectionStyled = styled.section`
+  height: 100vh;
+`;

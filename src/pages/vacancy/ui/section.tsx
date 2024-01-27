@@ -100,6 +100,7 @@ const SegmentedStyled = styled(Segmented)`
 `;
 
 const SectionStyled = styled.section`
+  height: 100vh;
   padding: var(--spacing-05);
   background-color: var(--tg-theme-bg-color);
 
