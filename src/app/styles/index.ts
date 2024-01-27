@@ -36,7 +36,7 @@ export const GlobalStyle = createGlobalStyle`
     --color-dark: #242424;
     --color-primary: #108ee9;
     --ui-01: #d1d1d1;
-    --ui-04: #f1f1f1
+    --ui-04: #f1f1f1;
     --primary: #ff3d00;
     --blue-sky: #c6dee5;
     --sky: #dee1e7;
