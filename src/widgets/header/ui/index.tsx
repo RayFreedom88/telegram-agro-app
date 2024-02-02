@@ -5,7 +5,7 @@ import { Plus } from "lucide-react";
 import { images } from "shared/assets";
 import { telegram } from "shared/lib";
 
-// TODO: Часть компонента нужно будет декомпозировать в слой features. К примеру кнопки из блока actions
+// TODO: Часть компонента нужно будет декомпозировать. К примеру кнопки из блока actions
 
 export const Header: FC = () => {
   const [isVisible, setVisible] = useState(true); // TODO: Временный код

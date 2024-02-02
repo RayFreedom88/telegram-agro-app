@@ -98,7 +98,7 @@ const VacancyCardStyled = styled(Link)`
   .vacancy__title {
     margin-bottom: var(--spacing-02);
     font-size: 14px;
-    line-height: 18px; /* 128.571% */
+    line-height: 18px;
   }
 
   .vacancy__company {
@@ -117,7 +117,7 @@ const VacancyCardStyled = styled(Link)`
   .vacancy__company-name {
     font-size: 12px;
     font-weight: 400;
-    line-height: 16px; /* 133.333% */
+    line-height: 16px;
   }
 
   .vacancy__info {
@@ -139,7 +139,6 @@ const VacancyCardStyled = styled(Link)`
 
         &:not(:first-child) {
           padding-left: var(--spacing-03);
-          /* color: var(--tg-theme-text-color); */
         }
       }
     }
@@ -148,7 +147,7 @@ const VacancyCardStyled = styled(Link)`
   .vacancy__salary {
     font-size: 14px;
     font-weight: 700;
-    line-height: 18px; /* 128.571% */
+    line-height: 18px;
     color: var(--primary);
     margin-top: var(--spacing-02);
   }

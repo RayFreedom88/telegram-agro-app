@@ -1,13 +1,33 @@
 import { styled, css } from "styled-components";
 import { Link } from "react-router-dom";
+import { useGate } from "effector-react";
 import { images } from "shared/assets";
+import { Gate, stores } from "../model";
 
 export const Section = () => {
+  const vacanciesCount = stores.useVacanciesCount();
+
+  useGate(Gate);
+
   return (
     <SectionStyled>
       <h2 className="visually-hidden">Content</h2>
 
       <ContentStyled>
+        <LinkStyled to={"vacancies"}>
+          <div>
+            <h3 className="link-title">
+              Каталог <br />
+              агро-вакансий
+            </h3>
+
+            <p className="link-text">
+              {vacanciesCount} актуальных <br />
+              предложения
+            </p>
+          </div>
+        </LinkStyled>
+
         <LinkStyled to={""} disabled>
           <div>
             <h3 className="link-title">
@@ -17,20 +37,6 @@ export const Section = () => {
             <p className="link-text">
               Персональный HR поможет с резюме, <br />
               найдёт подходящие варианты
-            </p>
-          </div>
-        </LinkStyled>
-
-        <LinkStyled to={"vacancies"}>
-          <div>
-            <h3 className="link-title">
-              Каталог <br />
-              агро-вакансий
-            </h3>
-
-            <p className="link-text">
-              92 актуальных <br />
-              предложения
             </p>
           </div>
         </LinkStyled>
