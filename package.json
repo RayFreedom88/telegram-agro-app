@@ -2,6 +2,8 @@
   "name": "telegram-agro-app",
   "private": true,
   "version": "1.0.0",
+  "author": "MIN",
+  "license": "MIT",
   "type": "module",
   "scripts": {
     "start": "vite",
