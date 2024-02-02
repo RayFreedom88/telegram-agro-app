@@ -1,4 +1,4 @@
-import { TSalary } from './vacancy.type';
+import { TSalary } from './type';
 
 export const getSalary = (from?: TSalary, to?: TSalary) => {
   if (from && to)
