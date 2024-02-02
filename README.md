@@ -1,14 +1,14 @@
-# Vite React Effector FSD Template
+# AgroHub in Telegram Mini App [FRONT]
 
-In the box:
+Небольшой проект агрегатора вакансий в телеграм
 
-- vite v4
-- react v18
-- typescript v4.9.5
-- effector v22
-- patronum v1
-- react router v6
-- styled-components
-- axios
-- eslint
-- prettier
+### Статус
+🚧 WIP 🚧
+
+## Stack 🔮
+* FSD
+* React
+* TypeScript
+* Effector
+* Styled-components
+* React Router
